@@ -1,0 +1,101 @@
+model,variation,t_elevated,t_high,t_extreme,tier,delivery_count,percentage
+Model A (Chasing),-20% (Aggressive),28.0,44.0,60.0,NORMAL,48462,52.71
+Model A (Chasing),-20% (Aggressive),28.0,44.0,60.0,ELEVATED,15207,16.54
+Model A (Chasing),-20% (Aggressive),28.0,44.0,60.0,HIGH,11163,12.14
+Model A (Chasing),-20% (Aggressive),28.0,44.0,60.0,EXTREME,17102,18.6
+Model A (Chasing),-10% (Moderate-Low),31.5,49.5,67.5,NORMAL,52291,56.88
+Model A (Chasing),-10% (Moderate-Low),31.5,49.5,67.5,ELEVATED,16907,18.39
+Model A (Chasing),-10% (Moderate-Low),31.5,49.5,67.5,HIGH,9096,9.89
+Model A (Chasing),-10% (Moderate-Low),31.5,49.5,67.5,EXTREME,13640,14.84
+Model A (Chasing),Baseline (Calibrated),35.0,55.0,75.0,NORMAL,55886,60.79
+Model A (Chasing),Baseline (Calibrated),35.0,55.0,75.0,ELEVATED,16375,17.81
+Model A (Chasing),Baseline (Calibrated),35.0,55.0,75.0,HIGH,10367,11.28
+Model A (Chasing),Baseline (Calibrated),35.0,55.0,75.0,EXTREME,9306,10.12
+Model A (Chasing),+10% (Moderate-High),38.5,60.5,82.5,NORMAL,59111,64.3
+Model A (Chasing),+10% (Moderate-High),38.5,60.5,82.5,ELEVATED,15987,17.39
+Model A (Chasing),+10% (Moderate-High),38.5,60.5,82.5,HIGH,11417,12.42
+Model A (Chasing),+10% (Moderate-High),38.5,60.5,82.5,EXTREME,5419,5.89
+Model A (Chasing),+20% (Conservative),42.0,66.0,90.0,NORMAL,62064,67.51
+Model A (Chasing),+20% (Conservative),42.0,66.0,90.0,ELEVATED,15563,16.93
+Model A (Chasing),+20% (Conservative),42.0,66.0,90.0,HIGH,12375,13.46
+Model A (Chasing),+20% (Conservative),42.0,66.0,90.0,EXTREME,1932,2.1
+Model B (First Innings),-20% (Aggressive),28.0,44.0,60.0,NORMAL,76428,74.89
+Model B (First Innings),-20% (Aggressive),28.0,44.0,60.0,ELEVATED,13601,13.33
+Model B (First Innings),-20% (Aggressive),28.0,44.0,60.0,HIGH,6327,6.2
+Model B (First Innings),-20% (Aggressive),28.0,44.0,60.0,EXTREME,5698,5.58
+Model B (First Innings),-10% (Moderate-Low),31.5,49.5,67.5,NORMAL,80903,79.27
+Model B (First Innings),-10% (Moderate-Low),31.5,49.5,67.5,ELEVATED,12220,11.97
+Model B (First Innings),-10% (Moderate-Low),31.5,49.5,67.5,HIGH,4965,4.87
+Model B (First Innings),-10% (Moderate-Low),31.5,49.5,67.5,EXTREME,3966,3.89
+Model B (First Innings),Baseline (Calibrated),35.0,55.0,75.0,NORMAL,83930,82.24
+Model B (First Innings),Baseline (Calibrated),35.0,55.0,75.0,ELEVATED,11003,10.78
+Model B (First Innings),Baseline (Calibrated),35.0,55.0,75.0,HIGH,4783,4.69
+Model B (First Innings),Baseline (Calibrated),35.0,55.0,75.0,EXTREME,2338,2.29
+Model B (First Innings),+10% (Moderate-High),38.5,60.5,82.5,NORMAL,86611,84.87
+Model B (First Innings),+10% (Moderate-High),38.5,60.5,82.5,ELEVATED,9828,9.63
+Model B (First Innings),+10% (Moderate-High),38.5,60.5,82.5,HIGH,4679,4.58
+Model B (First Innings),+10% (Moderate-High),38.5,60.5,82.5,EXTREME,936,0.92
+Model B (First Innings),+20% (Conservative),42.0,66.0,90.0,NORMAL,88562,86.78
+Model B (First Innings),+20% (Conservative),42.0,66.0,90.0,ELEVATED,9217,9.03
+Model B (First Innings),+20% (Conservative),42.0,66.0,90.0,HIGH,4111,4.03
+Model B (First Innings),+20% (Conservative),42.0,66.0,90.0,EXTREME,164,0.16
+Model C (Unified),-20% (Aggressive),28.0,44.0,60.0,NORMAL,124890,64.38
+Model C (Unified),-20% (Aggressive),28.0,44.0,60.0,ELEVATED,28808,14.85
+Model C (Unified),-20% (Aggressive),28.0,44.0,60.0,HIGH,17490,9.02
+Model C (Unified),-20% (Aggressive),28.0,44.0,60.0,EXTREME,22800,11.75
+Model C (Unified),-10% (Moderate-Low),31.5,49.5,67.5,NORMAL,133194,68.66
+Model C (Unified),-10% (Moderate-Low),31.5,49.5,67.5,ELEVATED,29127,15.01
+Model C (Unified),-10% (Moderate-Low),31.5,49.5,67.5,HIGH,14061,7.25
+Model C (Unified),-10% (Moderate-Low),31.5,49.5,67.5,EXTREME,17606,9.08
+Model C (Unified),Baseline (Calibrated),35.0,55.0,75.0,NORMAL,139816,72.07
+Model C (Unified),Baseline (Calibrated),35.0,55.0,75.0,ELEVATED,27378,14.11
+Model C (Unified),Baseline (Calibrated),35.0,55.0,75.0,HIGH,15150,7.81
+Model C (Unified),Baseline (Calibrated),35.0,55.0,75.0,EXTREME,11644,6.0
+Model C (Unified),+10% (Moderate-High),38.5,60.5,82.5,NORMAL,145722,75.12
+Model C (Unified),+10% (Moderate-High),38.5,60.5,82.5,ELEVATED,25815,13.31
+Model C (Unified),+10% (Moderate-High),38.5,60.5,82.5,HIGH,16096,8.3
+Model C (Unified),+10% (Moderate-High),38.5,60.5,82.5,EXTREME,6355,3.28
+Model C (Unified),+20% (Conservative),42.0,66.0,90.0,NORMAL,150626,77.65
+Model C (Unified),+20% (Conservative),42.0,66.0,90.0,ELEVATED,24780,12.77
+Model C (Unified),+20% (Conservative),42.0,66.0,90.0,HIGH,16486,8.5
+Model C (Unified),+20% (Conservative),42.0,66.0,90.0,EXTREME,2096,1.08
+Batter Pressure,-20% (Aggressive),28.0,44.0,60.0,NORMAL,124890,64.38
+Batter Pressure,-20% (Aggressive),28.0,44.0,60.0,ELEVATED,28808,14.85
+Batter Pressure,-20% (Aggressive),28.0,44.0,60.0,HIGH,17490,9.02
+Batter Pressure,-20% (Aggressive),28.0,44.0,60.0,EXTREME,22800,11.75
+Batter Pressure,-10% (Moderate-Low),31.5,49.5,67.5,NORMAL,133194,68.66
+Batter Pressure,-10% (Moderate-Low),31.5,49.5,67.5,ELEVATED,29127,15.01
+Batter Pressure,-10% (Moderate-Low),31.5,49.5,67.5,HIGH,14061,7.25
+Batter Pressure,-10% (Moderate-Low),31.5,49.5,67.5,EXTREME,17606,9.08
+Batter Pressure,Baseline (Calibrated),35.0,55.0,75.0,NORMAL,139816,72.07
+Batter Pressure,Baseline (Calibrated),35.0,55.0,75.0,ELEVATED,27378,14.11
+Batter Pressure,Baseline (Calibrated),35.0,55.0,75.0,HIGH,15150,7.81
+Batter Pressure,Baseline (Calibrated),35.0,55.0,75.0,EXTREME,11644,6.0
+Batter Pressure,+10% (Moderate-High),38.5,60.5,82.5,NORMAL,145722,75.12
+Batter Pressure,+10% (Moderate-High),38.5,60.5,82.5,ELEVATED,25815,13.31
+Batter Pressure,+10% (Moderate-High),38.5,60.5,82.5,HIGH,16096,8.3
+Batter Pressure,+10% (Moderate-High),38.5,60.5,82.5,EXTREME,6355,3.28
+Batter Pressure,+20% (Conservative),42.0,66.0,90.0,NORMAL,150626,77.65
+Batter Pressure,+20% (Conservative),42.0,66.0,90.0,ELEVATED,24780,12.77
+Batter Pressure,+20% (Conservative),42.0,66.0,90.0,HIGH,16486,8.5
+Batter Pressure,+20% (Conservative),42.0,66.0,90.0,EXTREME,2096,1.08
+Bowler Pressure,-20% (Aggressive),28.0,44.0,60.0,NORMAL,58923,30.37
+Bowler Pressure,-20% (Aggressive),28.0,44.0,60.0,ELEVATED,32957,16.99
+Bowler Pressure,-20% (Aggressive),28.0,44.0,60.0,HIGH,61334,31.62
+Bowler Pressure,-20% (Aggressive),28.0,44.0,60.0,EXTREME,40774,21.02
+Bowler Pressure,-10% (Moderate-Low),31.5,49.5,67.5,NORMAL,65383,33.7
+Bowler Pressure,-10% (Moderate-Low),31.5,49.5,67.5,ELEVATED,45347,23.38
+Bowler Pressure,-10% (Moderate-Low),31.5,49.5,67.5,HIGH,64065,33.03
+Bowler Pressure,-10% (Moderate-Low),31.5,49.5,67.5,EXTREME,19193,9.89
+Bowler Pressure,Baseline (Calibrated),35.0,55.0,75.0,NORMAL,71833,37.03
+Bowler Pressure,Baseline (Calibrated),35.0,55.0,75.0,ELEVATED,63110,32.53
+Bowler Pressure,Baseline (Calibrated),35.0,55.0,75.0,HIGH,52821,27.23
+Bowler Pressure,Baseline (Calibrated),35.0,55.0,75.0,EXTREME,6224,3.21
+Bowler Pressure,+10% (Moderate-High),38.5,60.5,82.5,NORMAL,78676,40.56
+Bowler Pressure,+10% (Moderate-High),38.5,60.5,82.5,ELEVATED,76172,39.27
+Bowler Pressure,+10% (Moderate-High),38.5,60.5,82.5,HIGH,37958,19.57
+Bowler Pressure,+10% (Moderate-High),38.5,60.5,82.5,EXTREME,1182,0.61
+Bowler Pressure,+20% (Conservative),42.0,66.0,90.0,NORMAL,86469,44.57
+Bowler Pressure,+20% (Conservative),42.0,66.0,90.0,ELEVATED,84828,43.73
+Bowler Pressure,+20% (Conservative),42.0,66.0,90.0,HIGH,22677,11.69
+Bowler Pressure,+20% (Conservative),42.0,66.0,90.0,EXTREME,14,0.01

@@ -1,0 +1,78 @@
+table_name,column_name,data_type,key_type,nullable,null_count,null_percentage,distinct_count,sample_values,description
+competitions.csv,comp_id,int64,Primary Key,False,0,0.0,141,3395; 3405; 3465,Unique identifier for the cricket tournament/series (Primary Key).
+competitions.csv,comp_name,str,Attribute,False,0,0.0,141,South Africa in New Zealand T20I Series 2026; Afghanistan v Sri Lanka T20I Series 2026; India in Zimbabwe T20I Series 2026,Official name of the tournament or bilateral series.
+competitions.csv,match_format,str,Attribute,False,0,0.0,2,T20I; T20,"Format of cricket ('T20I' for international, 'T20' for domestic/regional leagues)."
+competitions.csv,season,str,Attribute,False,0,0.0,8,2026; 2022; 2023,"Cricket season or calendar year (e.g., '2022', '2022/23', '2026')."
+teams.csv,comp_id,int64,Composite Key / FK,False,0,0.0,141,1331; 1335; 1345,Foreign Key referencing competitions.csv(comp_id).
+teams.csv,team_id,int64,Composite Key,False,0,0.0,38,22; 28; 18,Unique identifier for the cricket team/franchise/national squad.
+teams.csv,team_name,str,Attribute,False,0,0.0,38,England; West Indies; India,Official team name.
+matches.csv,match_id,int64,Primary Key,False,0,0.0,883,13511; 13512; 13513,Unique identifier for each match (Primary Key).
+matches.csv,comp_id,int64,Foreign Key,False,0,0.0,138,1331; 1335; 1345,Foreign Key referencing competitions.csv(comp_id).
+matches.csv,match_number,int64,Attribute,False,0,0.0,75,1; 2; 3,Match sequence number within the tournament or series.
+matches.csv,match_date,str,Attribute,False,0,0.0,686,2022-01-22; 2022-01-23; 2022-01-26,Scheduled start date of the match (YYYY-MM-DD).
+matches.csv,stage,str,Attribute,False,0,0.0,7,League; Qualifier; Eliminator,"Stage of the tournament (e.g. 'League', 'Final', 'Semi Final', 'Qualifier 1')."
+matches.csv,venue_id,int64,Attribute,False,0,0.0,98,54; 8; 44,Unique identifier for the ground/stadium.
+matches.csv,venue_country,str,Attribute,False,0,0.0,17,West Indies; India; Australia,Host country where the match took place.
+matches.csv,home_team_id,int64,Foreign Key,False,0,0.0,36,28; 18; 20,Foreign Key referencing teams.csv(team_id) for the designated home team.
+matches.csv,home_team,str,Attribute,False,0,0.0,36,West Indies; India; Australia,Name of designated home team.
+matches.csv,away_team_id,int64,Foreign Key,False,0,0.0,36,22; 28; 27,Foreign Key referencing teams.csv(team_id) for the designated away team.
+matches.csv,away_team,str,Attribute,False,0,0.0,36,England; West Indies; Sri Lanka,Name of designated away team.
+matches.csv,home_team_captain_id,float64,Attribute,True,44,4.98,90,494.0; 126.0; 250.0,Foreign Key referencing player_id for home team captain.
+matches.csv,away_team_captain_id,float64,Attribute,True,45,5.1,99,478.0; 1596.0; 494.0,Foreign Key referencing player_id for away team captain.
+matches.csv,toss_win_team_id,float64,Foreign Key,True,15,1.7,38,28.0; 22.0; 18.0,Foreign Key referencing teams.csv(team_id) for team winning the toss.
+matches.csv,toss_opted,str,Attribute,True,15,1.7,3,Fielding; Batting,Decision made by toss winner ('Batting' or 'Fielding').
+matches.csv,man_of_the_match,int64,Attribute,False,0,0.0,293,0; 4986; 1699,Foreign Key referencing player_id for Player of the Match awardee (0 if none).
+matches.csv,first_inn_revised_overs,float64,Attribute,True,858,97.17,14,114.0; 84.0; 66.0,"Total legal balls scheduled for 1st innings after rain/weather reduction (e.g., 90.0 = 15 overs)."
+matches.csv,second_inn_revised_overs,float64,Attribute,True,858,97.17,13,114.0; 42.0; 48.0,"Total legal balls scheduled for 2nd innings after DLS revision (e.g., 90.0 = 15 overs)."
+matches.csv,revised_target,float64,Attribute,True,860,97.4,24,143.0; 56.0; 91.0,DLS revised target score for the chasing team.
+matches.csv,knock_out,int64,Attribute,False,0,0.0,2,0; 1,"Binary indicator (1 if knockout/playoff match, 0 if league/group stage)."
+matches.csv,win_team_id,float64,Foreign Key,True,41,4.64,37,28.0; 22.0; 18.0,Foreign Key referencing teams.csv(team_id) for winning team (null if No Result / Abandoned).
+matches.csv,result,str,Attribute,False,0,0.0,670,West Indies Won by 9 Wickets; England Won by 1 Run; West Indies Won by 20 runs,Official text match outcome description.
+playing_eleven.csv,match_id,int64,Composite Key / FK,False,0,0.0,880,13511; 13512; 13513,Foreign Key referencing matches.csv(match_id).
+playing_eleven.csv,team_id,int64,Foreign Key,False,0,0.0,38,22; 28; 18,Foreign Key referencing teams.csv(team_id).
+playing_eleven.csv,player_id,int64,Composite Key / FK,False,0,0.0,1082,1187; 6273; 1210,Foreign Key referencing competition_team_player_mapping.csv(player_id).
+playing_eleven.csv,batting_order,float64,Attribute,True,8678,30.58,14,1.0; 2.0; 3.0,Nominal batting position or order listed in playing team sheet.
+playing_eleven.csv,is_played,bool,Attribute,False,0,0.0,2,True; False,Boolean flag: True if player was in the playing XI / took part in the match.
+playing_eleven.csv,is_captain,object,Attribute,True,8667,30.54,3,False; True,Boolean flag: True if player was designated team captain.
+playing_eleven.csv,is_wk,object,Attribute,True,8667,30.54,3,False; True,Boolean flag: True if player was designated wicketkeeper.
+playing_eleven.csv,is_impact,int64,Attribute,False,0,0.0,2,0; 1,"Flag indicating player was brought in as an IPL Impact Player (1=yes, 0=no)."
+playing_eleven.csv,is_impact_off,int64,Attribute,False,0,0.0,2,0; 1,"Flag indicating player was substituted out as an IPL Impact Player (1=yes, 0=no)."
+competition_team_player_mapping.csv,comp_id,int64,Foreign Key,False,0,0.0,140,1331; 1335; 1345,Foreign Key referencing competitions.csv(comp_id).
+competition_team_player_mapping.csv,comp_name,str,Attribute,False,0,0.0,140,England in West Indies T20I Series 2022; West Indies in India T20I Series 2022; Sri Lanka in Australia T20I Series 2022,Tournament name as registered in roster mapping.
+competition_team_player_mapping.csv,team_id,int64,Foreign Key,False,0,0.0,38,22; 28; 18,Foreign Key referencing teams.csv(team_id).
+competition_team_player_mapping.csv,team_name,str,Attribute,False,0,0.0,38,England; West Indies; India,Team name as registered in roster mapping.
+competition_team_player_mapping.csv,player_id,int64,Foreign Key / Entity PK,False,0,0.0,1217,478; 479; 722,Authoritative unique player identifier across all datasets.
+competition_team_player_mapping.csv,player_name,str,Attribute,False,0,0.0,1210,Eoin Morgan; Adil Rashid; Liam Dawson,Authoritative canonical player display name.
+ball_by_ball.csv,match_id,int64,Composite Key / FK,False,0,0.0,867,13511; 13512; 13513,Foreign Key referencing matches.csv(match_id).
+ball_by_ball.csv,innings,int64,Composite Key,False,0,0.0,4,1; 2; 3,"Innings number (1: 1st inn, 2: 2nd inn, 3: Super Over 1st inn, 4: Super Over 2nd inn)."
+ball_by_ball.csv,overid,int64,Composite Key,False,0,0.0,20,1; 2; 3,"Over sequence number (1-indexed: 1 = 1st over, 20 = 20th over)."
+ball_by_ball.csv,over_ball_num,int64,Composite Key,False,0,0.0,13,1; 2; 3,Ball number within the over (increments on all deliveries including extras; 1 to 13).
+ball_by_ball.csv,innings_ball_num,int64,Attribute,False,0,0.0,136,1; 2; 3,Chronological ball sequence number within the innings (1 to 136).
+ball_by_ball.csv,batting_team_id,int64,Foreign Key,False,0,0.0,38,22; 28; 18,Foreign Key referencing teams.csv(team_id) for the batting side.
+ball_by_ball.csv,bowling_team_id,int64,Foreign Key,False,0,0.0,38,28; 22; 18,Foreign Key referencing teams.csv(team_id) for the bowling/fielding side.
+ball_by_ball.csv,striker_id,int64,Foreign Key,False,0,0.0,888,1187; 6273; 1596,Foreign Key referencing player_id for batter facing the delivery.
+ball_by_ball.csv,striker_name,str,Attribute,False,0,0.0,885,Jason Roy; Tom Banton; Moeen Ali,Display name of facing batter.
+ball_by_ball.csv,non_striker_id,int64,Foreign Key,False,0,0.0,867,6273; 1210; 478,Foreign Key referencing player_id for non-striker at bowler's end.
+ball_by_ball.csv,non_striker_name,str,Attribute,False,0,0.0,864,Tom Banton; James Vince; Eoin Morgan,Display name of non-striker.
+ball_by_ball.csv,bowler_id,int64,Foreign Key,False,0,0.0,647,1772; 2633; 2417,Foreign Key referencing player_id for bowler delivering the ball.
+ball_by_ball.csv,bowler_name,str,Attribute,False,0,0.0,646,Sheldon Cottrell; Jason Holder; Akeal Hosein,Display name of bowler.
+ball_by_ball.csv,batting_type,str,Attribute,False,0,0.0,2,RHB; LHB,"Batting stance / hand ('RHB' = Right Hand Bat, 'LHB' = Left Hand Bat)."
+ball_by_ball.csv,bowling_type,str,Attribute,False,0,0.0,12,Left-arm fast-medium; Right-arm medium-fast; Slow left-arm orthodox,"Bowling classification (e.g. 'Right-arm fast', 'Left-arm orthodox', etc.)."
+ball_by_ball.csv,batting_order,int64,Attribute,False,0,0.0,13,1; 2; 4,Nominal batting order of the facing batter.
+ball_by_ball.csv,runs,int64,Attribute,False,0,0.0,7,0; 6; 4,"Runs scored off the bat by the striker (0, 1, 2, 3, 4, 5, 6). Excludes extras."
+ball_by_ball.csv,is_four,bool,Attribute,False,0,0.0,2,False; True,Boolean flag: True if delivery resulted in a boundary four scored by the batter.
+ball_by_ball.csv,is_six,bool,Attribute,False,0,0.0,2,False; True,Boolean flag: True if delivery resulted in a boundary six scored by the batter.
+ball_by_ball.csv,is_wicket,bool,Attribute,False,0,0.0,2,False; True,Boolean flag: True if a dismissal occurred on this delivery.
+ball_by_ball.csv,dismissal_type_id,float64,Attribute,True,190118,94.59,9,1.0; 2.0; 5.0,Numeric code for dismissal category.
+ball_by_ball.csv,dismissal_type,str,Attribute,True,190118,94.59,10,Bowled; Caught; Stump,"Dismissal category ('Caught', 'Bowled', 'LBW', 'Stump', 'Hit Wicket', 'RunOut', etc.)."
+ball_by_ball.csv,dismissed_player_id,float64,Foreign Key,True,190107,94.58,815,1187.0; 6273.0; 1596.0,Foreign Key referencing player_id for dismissed batter.
+ball_by_ball.csv,extras_type,str,Attribute,True,189167,94.11,7,wide; legbyes; byes,"Type of extra on delivery ('wide', 'Overstep', 'other', 'legbyes', 'byes', 'Penalty', or NaN)."
+ball_by_ball.csv,extras1_runs,int64,Attribute,False,0,0.0,6,0; 1; 4,"Primary extra runs awarded (wide run, no-ball run, bye runs, leg-bye runs, penalty)."
+ball_by_ball.csv,extras_2_runs,int64,Attribute,False,0,0.0,3,0; 4; 1,"Secondary extra runs on delivery (e.g., byes/leg-byes occurring on a no-ball)."
+ball_by_ball.csv,pace_or_spin,str,Attribute,False,0,0.0,2,Pace; Spin,Delivery categorization ('Pace' or 'Spin').
+ball_by_ball.csv,bowl_speed,float64,Attribute,False,0,0.0,1033,0.0; 126.0; 127.0,Measured bowling release speed (km/h) when tracking is available (0 if unavailable).
+ball_by_ball.csv,stroke,str,Attribute,True,6158,3.06,31,Cover Drive; Flick; Square Cut,"Shot type played by batter (e.g., 'Cover Drive', 'Pull', 'Defended', etc.)."
+ball_by_ball.csv,delivery_style,str,Attribute,True,391,0.19,35,Inswing; Seamed In; Full Toss,"Pitch trajectory / movement (e.g., 'Inswing', 'Outswing', 'Off break', etc.)."
+ball_by_ball.csv,over_or_around,str,Attribute,True,407,0.2,3,Over; Around,Bowler delivery side relative to stumps ('Over' or 'Around').
+ball_by_ball.csv,on_or_off,str,Attribute,False,0,0.0,2,Off-side; On-side,"Line of delivery relative to stumps ('Off-side', 'On-side', 'Straight')."
+ball_by_ball.csv,delivery_ist_time,str,Attribute,False,0,0.0,200826,2022-01-23 00:00:00 UTC; 2022-01-23 02:08:52 UTC; 2022-01-23 02:09:20 UTC,Timestamp of delivery recorded in Indian Standard Time (IST).

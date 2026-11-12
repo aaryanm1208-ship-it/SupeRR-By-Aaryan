@@ -1,0 +1,4 @@
+comparison,sample_size,spearman_correlation,cohen_kappa_agreement,interpretation
+Model A vs. Model C (Chasing),91934,1.0,1.0,Identical underlying leverage formulation in chases (100% agreement).
+Model B vs. Model C (First Innings),102054,1.0,1.0,Identical underlying leverage formulation in setting phase (100% agreement).
+Batter Pressure vs. Bowler Pressure (All),193988,0.2057,0.0201,Moderate positive correlation; distinct peaks in death finishes and collapses.

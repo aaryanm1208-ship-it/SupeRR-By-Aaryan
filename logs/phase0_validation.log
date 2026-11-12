@@ -1,0 +1,58 @@
+2026-11-12 14:45:40,919 - INFO - Starting Phase 0 Data Dictionary, Inventory, and Validation Audit...
+2026-11-12 14:45:40,920 - INFO - Processing competitions.csv (7,624 bytes)...
+2026-11-12 14:45:40,933 - INFO - Processing teams.csv (6,922 bytes)...
+2026-11-12 14:45:40,937 - INFO - Processing matches.csv (123,864 bytes)...
+2026-11-12 14:45:40,950 - INFO - Processing playing_eleven.csv (966,287 bytes)...
+2026-11-12 14:45:40,987 - INFO - Processing competition_team_player_mapping.csv (462,969 bytes)...
+2026-11-12 14:45:41,002 - INFO - Processing ball_by_ball.csv (41,071,837 bytes)...
+2026-11-12 14:45:42,622 - INFO - Saved data_dictionary.csv with 77 column definitions.
+2026-11-12 14:45:42,625 - INFO - Saved dataset_inventory.json.
+2026-11-12 14:46:17,624 - INFO - ==================================================
+2026-11-12 14:46:17,625 - INFO - PHASE 0: RIGOROUS DATA INTEGRITY AND VALIDATION SUITE
+2026-11-12 14:46:17,625 - INFO - ==================================================
+2026-11-12 14:46:17,625 - INFO - PASS: File competitions.csv exists and is non-empty (7,624 bytes).
+2026-11-12 14:46:17,626 - INFO - PASS: File teams.csv exists and is non-empty (6,922 bytes).
+2026-11-12 14:46:17,626 - INFO - PASS: File matches.csv exists and is non-empty (123,864 bytes).
+2026-11-12 14:46:17,626 - INFO - PASS: File playing_eleven.csv exists and is non-empty (966,287 bytes).
+2026-11-12 14:46:17,627 - INFO - PASS: File competition_team_player_mapping.csv exists and is non-empty (462,969 bytes).
+2026-11-12 14:46:17,627 - INFO - PASS: File ball_by_ball.csv exists and is non-empty (41,071,837 bytes).
+2026-11-12 14:46:17,627 - INFO - PASS: File Round 1 Problem Statement _ SupeRR Selector Season 2.docx.pdf exists and is non-empty (254,082 bytes).
+2026-11-12 14:46:18,851 - INFO - PASS: competitions.csv has expected 141 rows (actual=141).
+2026-11-12 14:46:18,851 - INFO - PASS: teams.csv has expected 353 rows (actual=353).
+2026-11-12 14:46:18,851 - INFO - PASS: matches.csv has expected 883 rows (actual=883).
+2026-11-12 14:46:18,851 - INFO - PASS: playing_eleven.csv has expected 28,381 rows (actual=28381).
+2026-11-12 14:46:18,851 - INFO - PASS: competition_team_player_mapping.csv has expected 6,413 rows (actual=6413).
+2026-11-12 14:46:18,851 - INFO - PASS: ball_by_ball.csv has expected 200,999 rows (actual=200999).
+2026-11-12 14:46:18,852 - INFO - PASS: competitions.csv comp_id is strictly unique (PK verified).
+2026-11-12 14:46:18,852 - INFO - PASS: matches.csv match_id is strictly unique (PK verified).
+2026-11-12 14:46:18,853 - INFO - PASS: teams.csv (comp_id, team_id) composite key is strictly unique.
+2026-11-12 14:46:18,853 - INFO - PASS: All teams.comp_id exist in competitions.
+2026-11-12 14:46:18,853 - INFO - PASS: All matches.comp_id exist in competitions.
+2026-11-12 14:46:18,854 - INFO - PASS: All matches.home_team_id exist in teams.
+2026-11-12 14:46:18,854 - INFO - PASS: All matches.away_team_id exist in teams.
+2026-11-12 14:46:18,855 - INFO - PASS: All matches.win_team_id exist in teams.
+2026-11-12 14:46:18,857 - INFO - PASS: All playing_eleven.match_id exist in matches.
+2026-11-12 14:46:18,860 - INFO - PASS: All playing_eleven.player_id exist in CTP mapping.
+2026-11-12 14:46:18,874 - INFO - PASS: All ball_by_ball.match_id exist in matches.
+2026-11-12 14:46:18,890 - INFO - PASS: All strikers exist in CTP players.
+2026-11-12 14:46:18,907 - INFO - PASS: All non-strikers exist in CTP players.
+2026-11-12 14:46:18,922 - INFO - PASS: All bowlers exist in CTP players.
+2026-11-12 14:46:18,924 - INFO - PASS: All dismissed players exist in CTP players.
+2026-11-12 14:46:18,940 - INFO - PASS: Exactly 16 matches in matches.csv have no ball-by-ball records.
+2026-11-12 14:46:18,942 - INFO - PASS: All 16 missing BBB matches have status 'Match Abandoned'.
+2026-11-12 14:46:18,944 - INFO - PASS: Every player_id maps to exactly ONE canonical player_name in CTP mapping.
+2026-11-12 14:46:18,946 - INFO - PASS: Exactly 7 player names are shared by multiple player IDs: ['Abdul Samad', 'Bashir Ahmad', 'Basil Hameed', 'Haider Ali', 'Mohammad Ali', 'Muhammad Farooq', 'Rashid Khan']
+2026-11-12 14:46:18,956 - INFO - PASS: Total legal deliveries = 192,444 (actual=192444).
+2026-11-12 14:46:18,957 - INFO - PASS: Total illegal deliveries (wide/nb) = 8,554 (actual=8554).
+2026-11-12 14:46:18,957 - INFO - PASS: Total penalty delivery events = 1 (actual=1).
+2026-11-12 14:46:18,965 - INFO - PASS: Total dismissals = 10,881 (actual=10881).
+2026-11-12 14:46:18,965 - INFO - PASS: Total bowler-credited wickets = 10,272 (actual=10272).
+2026-11-12 14:46:18,965 - INFO - PASS: Total non-bowler dismissals = 609 (actual=609).
+2026-11-12 14:46:18,966 - INFO - PASS: Bowler wickets + non-bowler wickets equals total wickets exactly.
+2026-11-12 14:46:18,968 - INFO - PASS: Total super over deliveries = 38 (actual=38).
+2026-11-12 14:46:18,970 - INFO - PASS: Identified 5 IPL seasons (comp_ids=[1358, 1715, 2193, 2725, 3298]).
+2026-11-12 14:46:18,970 - INFO - PASS: Identified 134 T20I competitions.
+2026-11-12 14:46:18,970 - INFO - PASS: Identified exactly 2 unrelated non-IPL/non-T20I competitions (comp_ids=[2670, 3289]).
+2026-11-12 14:46:18,970 - INFO - ==================================================
+2026-11-12 14:46:18,970 - INFO - ALL PHASE 0 VALIDATION TESTS PASSED WITH 100% SUCCESS!
+2026-11-12 14:46:18,970 - INFO - ==================================================

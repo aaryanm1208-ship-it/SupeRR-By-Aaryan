@@ -1,0 +1,84 @@
+2026-11-12 15:48:57,137 [INFO] MasterPipeline - ==========================================================================
+2026-11-12 15:48:57,138 [INFO] MasterPipeline -   SupeRR Selector Season 2: Elite Pressure Performance Intelligence System
+2026-11-12 15:48:57,138 [INFO] MasterPipeline -   Master Execution Pipeline: Phases 1 through 10
+2026-11-12 15:48:57,138 [INFO] MasterPipeline - ==========================================================================
+2026-11-12 15:48:57,138 [INFO] MasterPipeline - 
+>>> STAGE 1: Running Phase 1 Data Engineering...
+2026-11-12 15:48:57,138 [INFO] src.preprocessing - ==================================================
+2026-11-12 15:48:57,138 [INFO] src.preprocessing - STARTING PHASE 1 DATA ENGINEERING PIPELINE
+2026-11-12 15:48:57,138 [INFO] src.preprocessing - ==================================================
+2026-11-12 15:48:57,138 [INFO] src.loaders - --- Starting Full Dataset Loading ---
+2026-11-12 15:48:57,138 [INFO] src.loaders - Loading competitions from D:\Personal Projects\RR HACK\6af458274c1e8_data_pack\Data Pack\competitions.csv
+2026-11-12 15:48:57,150 [INFO] src.loaders - Loaded competitions: 141 rows, 4 columns
+2026-11-12 15:48:57,151 [INFO] src.loaders - Loading teams from D:\Personal Projects\RR HACK\6af458274c1e8_data_pack\Data Pack\teams.csv
+2026-11-12 15:48:57,153 [INFO] src.loaders - Loaded teams: 353 rows, 3 columns
+2026-11-12 15:48:57,154 [INFO] src.loaders - Loading matches from D:\Personal Projects\RR HACK\6af458274c1e8_data_pack\Data Pack\matches.csv
+2026-11-12 15:48:57,164 [INFO] src.loaders - Loaded matches: 883 rows, 22 columns
+2026-11-12 15:48:57,165 [INFO] src.loaders - Loading playing_eleven from D:\Personal Projects\RR HACK\6af458274c1e8_data_pack\Data Pack\playing_eleven.csv
+2026-11-12 15:48:57,202 [INFO] src.loaders - Loaded playing_eleven: 28381 raw rows, 9 columns
+2026-11-12 15:48:57,206 [WARNING] src.loaders - Found 75 duplicate playing_eleven entries across matches: [np.int64(13613), np.int64(21176), np.int64(28962)]. Deduplicating by prioritizing confirmed playing status and lowest batting order.
+2026-11-12 15:48:57,214 [INFO] src.loaders - playing_eleven after deduplication: 28341 rows (removed 40 duplicate rows)
+2026-11-12 15:48:57,214 [INFO] src.loaders - Loading player mapping from D:\Personal Projects\RR HACK\6af458274c1e8_data_pack\Data Pack\competition_team_player_mapping.csv
+2026-11-12 15:48:57,223 [INFO] src.loaders - Loaded player mapping: 6413 rows, 6 columns
+2026-11-12 15:48:57,225 [INFO] src.loaders - Loading ball_by_ball from D:\Personal Projects\RR HACK\6af458274c1e8_data_pack\Data Pack\ball_by_ball.csv (low_memory=False)
+2026-11-12 15:48:58,294 [INFO] src.loaders - Loaded ball_by_ball: 200999 rows, 33 columns
+2026-11-12 15:48:58,294 [INFO] src.loaders - --- All Datasets Loaded Successfully ---
+2026-11-12 15:48:58,294 [INFO] src.competition_filter - Classifying competitions based on metadata...
+2026-11-12 15:48:58,306 [INFO] src.competition_filter - Saved competition audit to D:\Personal Projects\RR HACK\outputs\reports\competition_audit.csv
+2026-11-12 15:48:58,314 [INFO] src.competition_filter - Competition Classification Summary:
+                             count  sum
+category inclusion_decision            
+EXCLUDED EXCLUDED                2   30
+IPL      INCLUDED                5  371
+T20I     INCLUDED              134  482
+2026-11-12 15:48:58,316 [INFO] src.competition_filter - Included competition IDs: 139
+2026-11-12 15:48:58,317 [INFO] src.competition_filter - Excluded competition IDs: 2 ({3289, 2670})
+2026-11-12 15:48:58,320 [INFO] src.competition_filter - Matches retained: 853 (Excluded: 30)
+2026-11-12 15:48:58,405 [INFO] src.competition_filter - Deliveries retained: 194014 (Excluded: 6985)
+2026-11-12 15:48:58,462 [INFO] src.competition_filter - Saved 6985 excluded deliveries to D:\Personal Projects\RR HACK\outputs\processed\excluded_deliveries.csv
+2026-11-12 15:48:58,530 [INFO] src.preprocessing - Isolated 26 Super Over deliveries into super_over_deliveries.parquet
+2026-11-12 15:48:58,530 [INFO] src.preprocessing - Retained 193988 standard innings (1 and 2) deliveries for processing
+2026-11-12 15:48:58,564 [INFO] src.preprocessing - Saved Super Over parquet to D:\Personal Projects\RR HACK\outputs\processed\super_over_deliveries.parquet
+2026-11-12 15:48:58,613 [INFO] src.match_state - Starting vectorized match-state reconstruction across deliveries...
+2026-11-12 15:48:58,863 [INFO] src.match_state - Match-state reconstruction completed with 100% vector efficiency.
+2026-11-12 15:48:58,864 [INFO] src.validation - Executing comprehensive match-state validation suite...
+2026-11-12 15:49:02,748 [INFO] src.validation - Saved match-state validation report to D:\Personal Projects\RR HACK\outputs\reports\match_state_validation.csv
+2026-11-12 15:49:02,751 [INFO] src.validation - Match-State Validation Results: 1652/1652 innings passed (100.0% pass rate: True)
+2026-11-12 15:49:02,752 [INFO] src.preprocessing - Persisting processed datasets to Parquet (Snappy compressed)...
+2026-11-12 15:49:03,281 [INFO] src.preprocessing - Saved 193,988 rows to D:\Personal Projects\RR HACK\outputs\processed\processed_deliveries.parquet
+2026-11-12 15:49:03,287 [INFO] src.preprocessing - Saved 853 rows to D:\Personal Projects\RR HACK\outputs\processed\processed_matches.parquet
+2026-11-12 15:49:03,289 [INFO] src.reporting - Generating Phase 1 Preprocessing Report...
+2026-11-12 15:49:03,290 [INFO] src.reporting - Saved Preprocessing Report to D:\Personal Projects\RR HACK\outputs\reports\preprocessing_report.md
+2026-11-12 15:49:03,290 [INFO] src.preprocessing - ==================================================
+2026-11-12 15:49:03,290 [INFO] src.preprocessing - PHASE 1 DATA ENGINEERING COMPLETED SUCCESSFULLY!
+2026-11-12 15:49:03,290 [INFO] src.preprocessing - ==================================================
+2026-11-12 15:49:03,294 [INFO] MasterPipeline - Reconstructed 193,988 deliveries across 853 matches.
+2026-11-12 15:49:03,295 [INFO] MasterPipeline - 
+>>> STAGE 2: Running Phase 2 Pressure Engine...
+2026-11-12 15:49:03,295 [INFO] src.pressure_engine - --- Starting Full Pressure Modeling Engine ---
+2026-11-12 15:49:03,295 [INFO] src.pressure_features - Extracting pre-delivery pressure feature representations...
+2026-11-12 15:49:03,372 [INFO] src.pressure_features - Pressure features extracted successfully.
+2026-11-12 15:49:03,372 [INFO] src.pressure_engine - Computing Model A (Chasing Pressure)...
+2026-11-12 15:49:03,500 [INFO] src.pressure_engine - Computing Model B (First-Innings Pressure)...
+2026-11-12 15:49:03,627 [INFO] src.pressure_engine - Computing Model C (Unified Contextual Pressure)...
+2026-11-12 15:49:03,813 [INFO] src.pressure_engine - Model C contextual scoring completed.
+2026-11-12 15:49:03,815 [INFO] src.pressure_engine - --- All Pressure Models Executed Successfully ---
+2026-11-12 15:49:04,521 [INFO] MasterPipeline - Saved Model C Pressure Deliveries (193,988 rows) to D:\Personal Projects\RR HACK\outputs\processed\pressure_deliveries_model_c.parquet
+2026-11-12 15:49:04,521 [INFO] MasterPipeline - 
+>>> STAGE 3: Running Phases 3, 4, 5 Performance Intelligence & Final Rankings...
+2026-11-12 15:49:06,724 [INFO] MasterPipeline - 
+>>> STAGE 4: Running Phase 6 Robustness Suite...
+2026-11-12 15:49:37,482 [INFO] MasterPipeline - 
+>>> STAGE 5: Running Phase 7 Publication Visualizations...
+2026-11-12 15:49:38,035 [WARNING] matplotlib.font_manager - findfont: Failed to find font weight semibold, now using 700.
+2026-11-12 15:49:38,042 [WARNING] matplotlib.font_manager - findfont: Failed to find font weight semibold, now using 700.
+2026-11-12 15:49:46,068 [INFO] MasterPipeline - 
+>>> STAGE 6: Running Phase 8 PDF Report Compiler...
+2026-11-12 15:49:48,703 [INFO] MasterPipeline - 
+>>> STAGE 7: Running Phase 10 Submission Packaging...
+2026-11-12 15:49:48,704 [INFO] Packaging - Packaging deliverables into FINAL_SUBMISSION/...
+2026-11-12 15:49:48,711 [INFO] Packaging - Successfully populated D:\Personal Projects\RR HACK\FINAL_SUBMISSION with all official challenge deliverables.
+2026-11-12 15:49:48,712 [INFO] MasterPipeline - 
+==========================================================================
+2026-11-12 15:49:48,712 [INFO] MasterPipeline -   ALL PHASES COMPLETED WITH 100% STATISTICAL AND CAUSAL FIDELITY.
+2026-11-12 15:49:48,712 [INFO] MasterPipeline - ==========================================================================
