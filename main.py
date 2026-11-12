@@ -1,3 +1,4 @@
+from src.api import app
 """
 SupeRR Selector Season 2 — Elite Pressure Performance Intelligence System.
 End-to-End Orchestrator (Phases 1 through 10).
